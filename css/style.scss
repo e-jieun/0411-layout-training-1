@@ -1,8 +1,9 @@
 // common
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 //variable
 $color-bk: black;
 $color-c4: #c4c4c4;
@@ -10,148 +11,218 @@ $color-dp: #8068AD;
 $color-pp: #C8B5C8;
 $color-yel: #EDEBB2;
 $color-cr: #FFFEF9;
-$color-dg: #000;
+$color-dg: rgb(71, 71, 71);
 $border-bk: 1px solid black;
 $border-red: 1px solid red;
 $per100: 100%;
+
 //class-set
 @mixin flex-align-justify($align, $justify) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
 }
+
 @mixin border($px, $color) {
   border: $px solid $color;
 }
-@mixin width-height($width, $height){
+
+@mixin width-height($width, $height) {
   width: $width;
   height: $height;
 }
-%default{
+
+%default {
   width: 100vw;
   height: 100vh;
 }
-%flex-column{
+
+%flex-column {
   flex-direction: column;
 }
-%circle{
+
+%circle {
   border-radius: 100%;
 }
-%border-30px{
+
+%border-30px {
   border-radius: 30px;
 }
-%flex-center-center{
+
+%flex-center-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 //style
-#root{
+#root {
   @extend %default;
-  #con{
+
+  #con {
     @extend %default;
     @include flex-align-justify(center, center);
     @extend %flex-column;
-    >div{
+
+    >div {
       width: inherit;
       flex-grow: 1;
-      border: $border-bk;
+      // border: $border-bk;
       @extend %flex-column;
       @include flex-align-justify(center, center);
-      >div{
+
+      >div {
         width: 90%;
-        border: $border-red;
+        // border: $border-red;
       }
     }
-    >div:nth-child(1){
-      >div:nth-child(1){
+
+    >div:nth-child(1) {
+      >div:nth-child(1) {
         flex-grow: 1;
       }
-      >div:nth-child(2){
-        flex-grow: 1;        
+
+      >div:nth-child(2) {
+        flex-grow: 1;
       }
-      >div:nth-child(3){
+
+      >div:nth-child(3) {
         flex-grow: 1;
         @include flex-align-justify(center, flex-end);
-        >ul{
+
+        >ul {
           width: 20%;
           @include flex-align-justify(center, space-between);
           list-style-type: none;
-          li{
+
+          li {
             @include width-height(3vw, 3vw);
             background-color: $color-c4;
             @extend %circle;
           }
-          li:nth-child(1){
+
+          li:nth-child(1) {
             background-color: $color-bk;
           }
         }
       }
     }
+
     // card bg
-    >div:nth-child(2){
+    >div:nth-child(2) {
       width: 90%;
       background-color: $color-c4;
       @extend %flex-center-center;
       @extend %border-30px;
-      >div:nth-child(1){
+
+      >div:nth-child(1) {
         @include flex-align-justify(center, flex-end);
       }
-      >div:nth-child(2){
+
+      >div:nth-child(2) {
         @extend %flex-center-center;
+        font-size: 4rem;
+        font-weight: 700;
+        color: $color-dg;
       }
-      >div:nth-child(3){
+
+      >div:nth-child(3) {
         // @extend %flex-center-center;
-        @include flex-align-justify(center, center);
+        border: $border-bk;
+        @include width-height(100%, 30%);
+        @include flex-align-justify(flex-start, center);
         @extend %flex-column;
+
         >div{
+          border: $border-bk;
           width: 50%;
           // grid로도 해결해보기
           @include flex-align-justify(flex-start, flex-start);
-          >ul{
+
+          >ul {
             width: $per100;
-            border: $border-bk;
+            // border: $border-bk;
             list-style-type: none;
             @include flex-align-justify(center, space-between);
-            >li{
+
+            >li {
+
             }
           }
         }
+
         // >div:nth-child(5){
         //   >div{
         //     position: relative;
         //     left: 50vw;
         //   }
-        }
       }
-      >div:nth-child(3){
-        border: $border-red;
-        >div{
-          @include width-height(90%, 90%);
-          @include flex-align-justify(center, center);
+    }
+
+    >div:nth-child(3) {
+      // border: $border-red;
+
+      >div {
+        @include width-height(90%, 90%);
+        @include flex-align-justify(center, center);
+        @extend %flex-column;
+        background-color: $color-c4;
+        @extend %border-30px;
+
+        >div {
+          @include width-height(inherit, inherit);
+          // border: $border-bk;
+          @include flex-align-justify(center, space-around);
           @extend %flex-column;
-          background-color: $color-c4;
-          @extend %border-30px;
-          >div{
-            @include width-height(inherit, inherit);            
-            border: $border-bk;
-            @include flex-align-justify(center, space-around);
+
+          >div {
+            // border: $border-bk;
+            @include flex-align-justify(center, center);
             @extend %flex-column;
-            >div{
-              border: $border-bk;
-              @include flex-align-justify(center, center);
-              @extend %flex-column;
-              >div:nth-child(1){
-                border: $border-bk;
-                @include flex-align-justify(center, center);
+
+            >div:nth-child(1) {
+              @include width-height(80vw, 1.5rem);
+              // border: $border-bk;
+              @include flex-align-justify(center, space-between);
+            }
+
+            // bar bg
+            >div:nth-child(2) {
+              @include width-height(80vw, 5vh);
+              // border: $border-bk;
+              @include flex-align-justify(center, flex-start);
+
+              >div:nth-child(1) {
+                @include width-height(80vw, 2vw);
+                background-color: #d6d6d6;
+                @extend %border-30px;
               }
-              >div:nth-child(2){
-                @include width-height(100%, inherit);
+
+              >div:nth-child(2) {
+                @include width-height(30vw, 2vw);
+                background-color: $color-dg;
+                @extend %border-30px;
+                position: absolute;
+              }
+              >div:nth-child(3){
                 border: $border-bk;
+                position: absolute;
+                >div:nth-child(1){
+                  @include width-height(1vw, 1vw);
+                  background-color: $color-dg;
+                  @extend %circle;
+                }
+                >div:nth-child(2){
+                  color: #fff;
+                }
               }
             }
+          }
+          >div:nth-child(4){
+            background-color: #fff;
           }
         }
       }
     }
   }
+}
