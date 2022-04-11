@@ -139,6 +139,8 @@ $per100: 100%;
       background-color: $color-c4;
       @extend %flex-center-center;
       @extend %border-30px;
+      @include border(1px, #fff);
+      box-shadow: 0px 5px 3px rgba($color: gray, $alpha: .5);
 
       >div:nth-child(1) {
         @include flex-align-justify(center, flex-end);
