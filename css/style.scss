@@ -185,7 +185,7 @@ $per100: 100%;
           // @include border(1px, #fff);
           position: absolute;
           right: 14vw;
-          top: 37vh;
+          top: 40vh;
           i{
             color: gray;
             font-size: 2.5rem;
@@ -224,15 +224,19 @@ $per100: 100%;
         @extend %flex-column;
         background-color: $color-c4;
         @extend %border-30px;
+        // border: $border-bk;
+
 
         >div{
-          @include width-height(inherit, 30%);
+          @include width-height(inherit, 50%);
           // border: $border-bk;
-          @include flex-align-justify(center, space-evenly);
+          @include flex-align-justify(center, center);
           @extend %flex-column;
+          position: relative;
+          top: 1vh;
 
           >div {
-            // border: $border-bk;
+            @include width-height(inherit, 5vh);
             @include flex-align-justify(center, center);
             @extend %flex-column;
 
@@ -269,12 +273,12 @@ $per100: 100%;
               >div:nth-child(3){
                 // border: $border-bk;
                 position: absolute;
-                right: 50vw;
+                right: 40vw;
                 @include flex-align-justify(center, center);
                 @extend %flex-column;
                 >div:nth-child(1){
                   position: relative;
-                  @include width-height(2vw, 2vw);
+                  @include width-height(1vw, 1vw);
                   top: 1vh;
                   background-color: #fff;
                   @extend %circle;
@@ -299,7 +303,6 @@ $per100: 100%;
                 @extend %flex-column;
                   >div:nth-child(1){
                     position: relative;
-                    @include width-height(2vw, 2vw);
                     top: 1vh;
                     background-color: #fff;
                     @extend %circle;
@@ -324,7 +327,6 @@ $per100: 100%;
                 @extend %flex-column;
                   >div:nth-child(1){
                     position: relative;
-                    @include width-height(2vw, 2vw);
                     top: 1vh;
                     background-color: $color-dg;
                     @extend %circle;
@@ -342,7 +344,7 @@ $per100: 100%;
         >div:nth-child(4){
           @include width-height(inherit, 15vh);
           position: relative;
-          top: -2vh;
+          top: -1vh;
           @include flex-align-justify(flex-start, center);
           >div{
             @include width-height(15vw, 7vw);
